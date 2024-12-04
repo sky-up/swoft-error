@@ -1,5 +1,5 @@
 {
-  "name": "swoft/error",
+  "name": "swoft-fork/error",
   "type": "library",
   "version": "v2.0.11",
   "keywords": [
@@ -10,10 +10,10 @@
     "exception"
   ],
   "description": "swoft error handle component",
-  "homepage": "https://github.com/swoft-cloud/swoft-error",
+  "homepage": "https://github.com/sky-up/swoft-error",
   "license": "Apache-2.0",
   "require": {
-    "swoft/stdlib": "~2.0.0"
+    "swoft-fork/stdlib": "~2.0.0"
   },
   "autoload": {
     "psr-4": {
