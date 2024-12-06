@@ -16,7 +16,7 @@ Swoft Error Component
 - composer command
 
 ```bash
-composer require swoft/error
+composer require swoft-fork/error
 ```
 
 ## Resources
