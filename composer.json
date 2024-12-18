@@ -1,7 +1,7 @@
 {
   "name": "swoft-fork/error",
   "type": "library",
-  "version": "v2.0.11",
+  "version": "v2.1.0",
   "keywords": [
     "php",
     "swoole",
@@ -13,7 +13,7 @@
   "homepage": "https://github.com/sky-up/swoft-error",
   "license": "Apache-2.0",
   "require": {
-    "swoft-fork/stdlib": "~2.0.0"
+    "swoft-fork/stdlib": "~2.1.0"
   },
   "autoload": {
     "psr-4": {
@@ -28,7 +28,7 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^7.5 || ^8.0",
-    "swoft/framework": "~2.0.0"
+    "swoft-fork/framework": "~2.1.0"
   },
   "scripts": {
     "test": "./vendor/bin/phpunit -c phpunit.xml"
