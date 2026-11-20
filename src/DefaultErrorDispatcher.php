@@ -16,11 +16,11 @@ use Swoft\Bean\Annotation\Mapping\Bean;
 use Swoft\Error\Contract\DefaultErrorHandlerInterface;
 use Throwable;
 use function error_get_last;
+use function error_reporting;
 use function register_shutdown_function;
 use function set_error_handler;
 use function set_exception_handler;
 use const E_ALL;
-use const E_STRICT;
 
 /**
  * Class DefaultErrorDispatcher
@@ -33,7 +33,7 @@ class DefaultErrorDispatcher
     /**
      * @var int
      */
-    private $errorTypes = E_ALL | E_STRICT;
+    private $errorTypes = E_ALL;
 
     /**
      * @var DefaultErrorHandlerInterface
@@ -86,6 +86,11 @@ class DefaultErrorDispatcher
      */
     public function handleError(int $num, string $str, string $file, int $line): void
     {
+        // 遵循 PHP 官方规范：如果错误被 @ 错误抑制符抑制或不在 error_reporting 范围内，不抛出异常
+        if (!(error_reporting() & $num)) {
+            return;
+        }
+
         // $this->handleException(new \ErrorException($str, 0, $num, $file, $line));
         throw new ErrorException($str, 0, $num, $file, $line);
     }
